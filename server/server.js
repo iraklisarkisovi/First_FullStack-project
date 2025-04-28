@@ -2,10 +2,16 @@ const dotenv = require("dotenv");
 const express = require("express");
 const mongoose = require("mongoose");
 const Users = require("./Models/Items")
+const cors = require("cors")
 
 dotenv.config();
 
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 app.use(express.json());
 
