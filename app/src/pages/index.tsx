@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { GET } from "./api/hello";
-import Register from "./Components/Register";
+import LandingPage from "./Components/LandingPage";
+import Header from "./Components/Header";
+import Secondary from "./Components/Secondary";
 
 export type dataType = {
   personal: {
@@ -10,14 +10,15 @@ export type dataType = {
   _id: string;
   email: string;
   password: string;
-  id: number;
 };
 
 export default function Home() {
 
   return (
     <>
-      <Register/>
+      <Header/>
+      <LandingPage/>
+      <Secondary/>
     </>
   );
 }

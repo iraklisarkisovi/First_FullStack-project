@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { dataType } from '..'
-import { GET, POST } from '../api/hello';
+import { dataType } from '.'
+import { GET, POST } from './api/hello';
 
 const userHandler = ["name", "number", "email", "password"];
 
@@ -23,7 +23,6 @@ const Register = () => {
     _id: "",
     email: "",
     password: "",
-    id: Number(data.length) + 1,
   });
 
   const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
