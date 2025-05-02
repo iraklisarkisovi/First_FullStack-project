@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { GET } from "./api/hello";
-import Register from "./api/Register";
+import Register from "./Components/Register";
 
 export type dataType = {
   personal: {

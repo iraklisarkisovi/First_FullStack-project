@@ -50,6 +50,27 @@ app.delete("/users/:id", async (req, res) => {
   res.status(204).end();
 });
 
+// dynamic server response
+app.get("/users/:id", async (req, res) => {
+  const {id} = req.params
+
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    res.status(400).json({error: "Request format is not valid"})
+  }
+
+  try {
+    const user = await Users.findById(id);
+    if (!user) {
+      res.status(404).json({ message: "User not found" });  
+    } else {
+      res.status(200).json(user);
+    }
+  } catch (err) {
+    res.status(500).json({ error: "Server error" }); 
+  }
+});
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

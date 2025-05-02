@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { dataType } from '..'
-import { GET, POST } from './hello';
+import { GET, POST } from '../api/hello';
 
 const userHandler = ["name", "number", "email", "password"];
 
@@ -9,7 +9,7 @@ const Register = () => {
 
     useEffect(() => {
       const get = async () => {
-        setData(await GET())
+        setData(await GET());
       }
       get()
     }, [])
